@@ -34,6 +34,17 @@ WITH_GAPPS := true
 # demand Google-internal *.google.contributions.prebuilt modules. Build mainline from source.
 PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
 
+# zuma's aosp_common.mk enforces generic_system artifact paths (relaxed). These are the exact
+# system files Infinity/GApps add on top; listed explicitly so the check stays meaningful.
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/apex/com.google.android.extservices.apex \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+    system/lib64/libtensorflowlite_gpu_jni.so \
+    system/lib64/libtensorflowlite_jni.so \
+    system/priv-app/OmniStyle/OmniStyle.apk \
+    system/priv-app/TagGoogle/TagGoogle.apk
+
 # vendor/infinity has no Lineage version vars; build_kernel uses them to pick the
 # LineageOS kernel manifest branch (lineage-24.0).
 PRODUCT_VERSION_MAJOR := 24
