@@ -32,7 +32,8 @@ $(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
 # Google Camera (overrides Aperture)
 $(call inherit-product-if-exists, vendor/google/camera/camera.mk)
 
-# Our shared additions (Pixel Launcher, removed packages, Now Playing PCS fix)
+# Our shared additions. Infinity's GApps don't ship the Pixel Launcher APK.
+CHIRANZ_PIXEL_LAUNCHER := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Infinity X
