@@ -30,6 +30,10 @@ TARGET_HAS_UDFPS := true
 WITH_GAPPS := true
 # About-phone props (values with spaces) live in shiba/system.prop.
 
+# GApps ship com.google.android.extservices, which disables build/make's guard and makes Soong
+# demand Google-internal *.google.contributions.prebuilt modules. Build mainline from source.
+PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
+
 # vendor/infinity has no Lineage version vars; build_kernel uses them to pick the
 # LineageOS kernel manifest branch (lineage-24.0).
 PRODUCT_VERSION_MAJOR := 24
