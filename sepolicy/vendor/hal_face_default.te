@@ -1,0 +1,4 @@
+# Google face HAL reads /metadata at init. Denied on LineageOS's zuma policy
+# ("avc: denied { read } ... scontext=u:r:hal_face_default:s0 tcontext=u:object_r:metadata_file:s0 tclass=dir"),
+# seen on-device on Mist-OS 17; Voltage shipped the same rule. Read-only, directory only.
+allow hal_face_default metadata_file:dir r_dir_perms;
