@@ -28,10 +28,7 @@ TARGET_SCREEN_WIDTH := 1080
 INFINITY_MAINTAINER := chiranz
 TARGET_HAS_UDFPS := true
 WITH_GAPPS := true
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.product.marketname=Pixel\ 8 \
-    ro.infinity.soc=Google\ Tensor\ G3 \
-    ro.infinity.camera=50MP\ +\ 12MP
+# About-phone props (values with spaces) live in shiba/system.prop.
 
 # vendor/infinity has no Lineage version vars; build_kernel uses them to pick the
 # LineageOS kernel manifest branch (lineage-24.0).
