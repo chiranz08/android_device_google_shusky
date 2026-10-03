@@ -43,8 +43,11 @@ PRODUCT_PACKAGES += \
     SettingsShibaOverlay \
     SystemUIGoogleOverlayVendorShiba
 
+# Aperture's RRO only when Aperture ships (Google Camera overrides it)
+ifeq ($(wildcard vendor/google/camera/camera.mk),)
 PRODUCT_PACKAGES += \
     ApertureOverlayShiba
+endif
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk

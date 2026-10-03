@@ -24,6 +24,17 @@ PRODUCT_SYSTEM_NAME := generic_system_google
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Google face unlock instead of the ROM's software one. Must be set here: the product makefile is
+# parsed before vendor/infinity/config/common.mk, which only adds FaceUnlock if this isn't false.
+TARGET_FACE_UNLOCK_SUPPORTED := false
+$(call inherit-product-if-exists, vendor/google/faceunlock/config.mk)
+
+# Google Camera (overrides Aperture)
+$(call inherit-product-if-exists, vendor/google/camera/camera.mk)
+
+# Our shared additions (Pixel Launcher, removed packages, Now Playing PCS fix)
+$(call inherit-product-if-exists, vendor/chiranz/config.mk)
+
 # Infinity X
 INFINITY_MAINTAINER := chiranz
 TARGET_HAS_UDFPS := true
