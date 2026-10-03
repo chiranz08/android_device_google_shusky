@@ -44,6 +44,22 @@ ASCP_MAINTAINER := chiranz
 # demand Google-internal *.google.contributions.prebuilt modules. Build mainline from source.
 PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
 
+# zuma's aosp_common.mk enforces generic_system artifact paths (relaxed). Exact system files
+# Pixelify/GApps add. The second group failed the Make-stage check on the 2026-09-27 ASCP build of
+# this same manifest (3d6c1ba); listed up front to avoid a rebuild round per stage.
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/apex/com.google.android.extservices.apex \
+    system/app/GoogleExtShared/GoogleExtShared.apk \
+    system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
+    system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
+    system/priv-app/TagGoogle/TagGoogle.apk \
+    system/etc/init/custom-ota.rc \
+    system/etc/init/init.openssh.rc \
+    system/etc/init/keystore-compat.rc \
+    system/etc/permissions/privapp-permissions-google.xml \
+    system/etc/permissions/privapp_allowlist_com.google.android.ext.services.xml \
+    system/etc/sysconfig/custom-power-whitelist.xml
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="shiba-user 17 CP2A.260805.005 15828068 release-keys" \
     BuildFingerprint=google/shiba/shiba:17/CP2A.260805.005/15828068:user/release-keys \
