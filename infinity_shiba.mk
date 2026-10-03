@@ -38,6 +38,8 @@ PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
 # system files Infinity/GApps add on top; listed explicitly so the check stays meaningful.
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/apex/com.google.android.extservices.apex \
+    system/etc/permissions/privapp-permissions-google.xml \
+    system/media/bootanimation.zip \
     system/app/GoogleExtShared/GoogleExtShared.apk \
     system/app/GooglePrintRecommendationService/GooglePrintRecommendationService.apk \
     system/lib64/libtensorflowlite_gpu_jni.so \
