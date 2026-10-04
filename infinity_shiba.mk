@@ -38,6 +38,16 @@ CHIRANZ_JAMESDSP := true
 CHIRANZ_POWERINSIGHT := true
 CHIRANZ_GOOGLE_STOCK := true
 CHIRANZ_FIREWALL := true
+CHIRANZ_GAPPS_SET := true
+
+# Standard Google app set: Google Phone, Messages and file picker (each overrides the AOSP app),
+# Pixel live and 2025 wallpapers. The trims are in vendor/chiranz (CHIRANZ_GAPPS_SET).
+PRODUCT_PACKAGES += \
+    GoogleDialer \
+    PrebuiltBugle \
+    DocumentsUIGoogle \
+    PixelLiveWallpaperPrebuilt-26000013 \
+    PixelWallpapers2025
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Infinity X
@@ -53,6 +63,7 @@ PRODUCT_BUILD_IGNORE_APEX_CONTRIBUTION_CONTENTS := true
 # zuma's aosp_common.mk enforces generic_system artifact paths (relaxed). These are the exact
 # system files Infinity/GApps add on top; listed explicitly so the check stays meaningful.
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/priv-app/DocumentsUIGoogle/DocumentsUIGoogle.apk \
     system/apex/com.google.android.extservices.apex \
     system/etc/permissions/privapp-permissions-google.xml \
     system/media/bootanimation.zip \
