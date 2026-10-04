@@ -36,6 +36,7 @@ $(call inherit-product-if-exists, vendor/google/camera/camera.mk)
 CHIRANZ_PIXEL_LAUNCHER := true
 CHIRANZ_JAMESDSP := true
 CHIRANZ_POWERINSIGHT := true
+CHIRANZ_GOOGLE_STOCK := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Infinity X
