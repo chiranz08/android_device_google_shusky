@@ -35,6 +35,7 @@ $(call inherit-product-if-exists, vendor/google/camera/camera.mk)
 # Our shared additions. Infinity's GApps don't ship the Pixel Launcher APK.
 CHIRANZ_PIXEL_LAUNCHER := true
 CHIRANZ_JAMESDSP := true
+CHIRANZ_POWERINSIGHT := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Infinity X
