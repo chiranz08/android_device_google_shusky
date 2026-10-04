@@ -44,8 +44,11 @@ PRODUCT_PACKAGES += \
     SettingsHuskyOverlay \
     SystemUIGoogleOverlayVendorHusky
 
+# Aperture's RRO only when Aperture ships (Google Camera overrides it)
+ifeq ($(wildcard vendor/google/camera/camera.mk),)
 PRODUCT_PACKAGES += \
     ApertureOverlayHusky
+endif
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
