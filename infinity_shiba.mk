@@ -37,6 +37,7 @@ CHIRANZ_PIXEL_LAUNCHER := true
 CHIRANZ_JAMESDSP := true
 CHIRANZ_POWERINSIGHT := true
 CHIRANZ_GOOGLE_STOCK := true
+CHIRANZ_FIREWALL := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Infinity X
