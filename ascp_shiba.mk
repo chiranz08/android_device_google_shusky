@@ -35,6 +35,8 @@ $(call inherit-product-if-exists, vendor/google/camera/camera.mk)
 
 # Our shared additions. Pixelify's GApps don't ship the Pixel Launcher APK.
 CHIRANZ_PIXEL_LAUNCHER := true
+CHIRANZ_JAMESDSP := true
+CHIRANZ_GOOGLE_STOCK := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Pixelify
