@@ -1,0 +1,3 @@
+# Camera HAL creates subdirectories in its data dir (zuma already grants rw_dir_perms but not
+# create). Denied ~10x per boot with Google Camera; likely the video bokeh node.
+allow hal_camera_default vendor_camera_data_file:dir create;

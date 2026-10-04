@@ -1,0 +1,3 @@
+# gxp_logging (TPU logger) tries to write to the Perfetto producer socket ~5x/min. Harmless:
+# silence it rather than grant tracing access.
+dontaudit gxp_logging traced_producer_socket:sock_file write;
