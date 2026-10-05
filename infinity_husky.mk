@@ -39,6 +39,7 @@ CHIRANZ_POWERINSIGHT := true
 CHIRANZ_GOOGLE_STOCK := true
 CHIRANZ_FIREWALL := true
 CHIRANZ_GAPPS_SET := true
+CHIRANZ_CLEAR_CALLING := true
 
 # Standard Google app set: Google Phone, Messages and file picker (each overrides the AOSP app),
 # Pixel live and 2025 wallpapers. The trims are in vendor/chiranz (CHIRANZ_GAPPS_SET).
