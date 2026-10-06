@@ -39,6 +39,7 @@ CHIRANZ_JAMESDSP := true
 CHIRANZ_GOOGLE_STOCK := true
 CHIRANZ_GAPPS_SET := true
 CHIRANZ_CLEAR_CALLING := true
+CHIRANZ_BCR := true
 $(call inherit-product-if-exists, vendor/chiranz/config.mk)
 
 # Pixelify
